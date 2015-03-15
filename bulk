@@ -1,1 +1,44 @@
 
+   #include <iostream>  
+    using namespace std;  
+    class Bulk  
+    {  
+    public:  
+        Bulk(double x=1.0,double y=1.0,double z=1.0):lengh(x),width(y),height(z){};  
+        void get_value();  
+        void display();  
+    private:  
+        double lengh;  
+        double width;  
+        double height;  
+    };  
+      
+    void Bulk::get_value()  
+    {   
+        cout<<"please input lengh, width, height:";  
+        cin>>lengh;  
+        cin>>width;  
+        cin>>height;  
+    }  
+      
+    void Bulk::display()  
+    {   
+        cout<<"    The volume is: "<<lengh*width*height<<endl;  
+        cout<<"    The surface area is: "<<2*(lengh*width+lengh*height+width*height)<<endl;  
+        cout<<endl;  
+    }  
+      
+    int main()  
+    {  
+        Bulk b[5]={}; 
+		    b[2].get_value();
+        b[4].get_value();  
+        //下面分别输出这个长方柱的体积和表面积  only the b[2] b[4] is using our number.
+        for(int i=0;i<5;++i)  
+        {  
+            cout<<"关于b["<<i<<"]"<<endl;  
+            b[i].display();  
+        }  
+        system("pause");  
+        return 0;  
+    }  
